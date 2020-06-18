@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { conversaoMilisegundos } from '../utils/TimerUtils';
@@ -36,7 +35,7 @@ export default function Timer({ titulo }) {
             <Text style={styles.decorrido}>{stringDecorrido}</Text>
             <View style={styles.botoes}>
 
-                <Button onPress={toggle}>{!isRunning ? 'Start' : 'Pause'}</Button>
+                <Button labelStyle={styles.startButton} onPress={toggle}>{!isRunning ? 'Start' : 'Pause'}</Button>
             </View>
 
         </View>
@@ -45,22 +44,36 @@ export default function Timer({ titulo }) {
 }
 
 const styles = StyleSheet.create({
+    containerTimer: {
+        backgroundColor: '#4A5568',
+
+    },
     titulo: {
         fontWeight: 'bold',
-        fontSize: 12,
+        fontSize: 20,
+        color: 'white',
+        marginTop: 10,
+        marginLeft: 10
 
     },
     decorrido: {
         fontWeight: 'bold',
-        fontSize: 30,
-        textAlign: 'center'
+        fontSize: 50,
+        textAlign: 'center',
+        color: 'white',
+        letterSpacing: 1
     },
     botoes: {
         display: 'flex',
-        justifyContent: 'space-between'
+        marginTop: 10
+
     },
     card: {
         marginTop: 10,
     },
+    startButton: {
+        color: '#FBB6CE',
+        fontSize: 20
+    }
 
 })

@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import uuid from 'uuid-random'
 
 export const conversaoMilisegundos = (ms) => {
